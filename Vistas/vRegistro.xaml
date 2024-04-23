@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="hchavezExamenP1.Vistas.vRegistro"
+             Title="REGISTRO">
+    <VerticalStackLayout>
+
+
+        <Label x:Name="lblUsuario" TextColor="Red" FontSize="20" HorizontalTextAlignment="End"></Label>
+        <Image  HeightRequest="100" Source="logou.png"></Image>
+        
+        <Label 
+        Text="REGISTRO"
+        FontFamily="Roboto"
+         HorizontalTextAlignment="Center"
+        FontSize="20"
+        TextColor="Blue">
+        </Label>
+
+        <Label Text="Datos del Estudiante: ">
+            
+        </Label>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="Nombre: "
+                 Grid.Row="0"
+                 Grid.Column="0"></Label>
+
+            <Label Text="Apellido: "
+                 Grid.Row="0"
+                Grid.Column="1"></Label>
+
+            <Label Text="Edad: "
+                Grid.Row="0"
+                 Grid.Column="2"></Label>
+
+            <Entry x:Name="txtNombre"
+                Placeholder="Ingrese su nombre"
+            
+             Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"/>
+
+            <Entry x:Name="txtApellido"
+                 Placeholder="Ingrese su apellido"
+ 
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"/>
+
+            <Entry x:Name="txtEdad"
+                Placeholder="Ingrese su edad"
+ 
+                Grid.Row="1"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"/>
+
+
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Fecha:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+            <DatePicker x:Name="datePicker" Grid.Row="0" Grid.Column="1"/>
+
+            <Label Text="País:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+            <Picker x:Name="countryPicker" Grid.Row="1" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Ecuador</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Perú</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Ciudad:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+            <Picker x:Name="cityPicker" Grid.Row="2" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Quito</x:String>
+                        <x:String>Guayaquil</x:String>
+                        <x:String>Bogotá</x:String>
+                        <x:String>Cali</x:String>
+                        <x:String>Cuzco</x:String>
+                        <x:String>Lima</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Monto Inicial:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+            <Entry x:Name="initialAmountEntry" Placeholder="Ingrese el monto inicial" Grid.Row="3" Grid.Column="1"/>
+
+            <Label Text="Pago mensual:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"/>
+            <Entry x:Name="monthlyPaymentEntry" Placeholder="----" Grid.Row="4" Grid.Column="1" IsReadOnly="True"/>
+
+
+        </Grid>
+
+        <Button x:Name="btnRegistro1"
+                Text="Mensualidad"
+                Clicked="btnMensualidad_Clicked"
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="1">
+                
+        </Button>
+
+        <Button x:Name="btnResumen"
+                 Text="Resumen"
+                Clicked="btnResumen_Clicked"
+                Grid.Row="5"
+                Grid.Column="3"></Button>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
